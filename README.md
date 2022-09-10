@@ -1,5 +1,11 @@
 # Background
 
+IF you are hosting a website with MANY pages, you want to be able to cache HTML in Varnish or Cloudflare or Fastly. You don't need authentication on landing pages.
+
+More advanced techniques would be to route in the Phoenix app by Cookies. Say if, a user visited the cookieless page with a backend, authenticated user cookie, either the Phoenix default or a cookie from a cart, then the router switches the scope to or controller and personalizes the page.
+
+These kinds of caching issues can save money, speed up the site and generally improve the UX.
+
 Demo repo inspired by conversation on Elixir Forum;
 https://elixirforum.com/t/how-to-generate-sessionless-cookie-free-cacheable-html/50167/3
 
