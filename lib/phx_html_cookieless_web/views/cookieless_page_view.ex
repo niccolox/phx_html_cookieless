@@ -1,3 +1,3 @@
 defmodule PhxHtmlCookielessWeb.CookielessPageView do
-  use PhxHtmlCookielessWeb, :view
+  use PhxHtmlCookielessWeb, :cookielessview
 end

@@ -14,6 +14,7 @@ defmodule PhxHtmlCookielessWeb.Router do
   pipeline :browserstatic do
     plug :accepts, ["html"]
     plug :put_root_layout, {PhxHtmlCookielessWeb.LayoutView, :rootcookieless}
+    plug PhxHtmlCookielessWeb.Plug.CacheControl
   end
 
   pipeline :api do

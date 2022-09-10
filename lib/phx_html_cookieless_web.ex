@@ -42,6 +42,21 @@ defmodule PhxHtmlCookielessWeb do
     end
   end
 
+  def cookielessview do
+    quote do
+      use Phoenix.View,
+        root: "lib/phx_html_cookieless_web/templates",
+        namespace: PhxHtmlCookielessWeb
+
+      # Import convenience functions from controllers
+      import Phoenix.Controller,
+        only: [view_module: 1, view_template: 1]
+
+      # Include shared imports and aliases for views
+      unquote(view_helpers())
+    end
+  end
+
   def live_view do
     quote do
       use Phoenix.LiveView,
