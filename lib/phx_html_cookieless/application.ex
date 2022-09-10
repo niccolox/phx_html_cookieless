@@ -15,7 +15,8 @@ defmodule PhxHtmlCookieless.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: PhxHtmlCookieless.PubSub},
       # Start the Endpoint (http/https)
-      PhxHtmlCookielessWeb.Endpoint
+      PhxHtmlCookielessWeb.Endpoint,
+      PhxHtmlCookielessWeb.CookielessEndpoint
       # Start a worker by calling: PhxHtmlCookieless.Worker.start_link(arg)
       # {PhxHtmlCookieless.Worker, arg}
     ]

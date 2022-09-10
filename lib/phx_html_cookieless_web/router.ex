@@ -10,6 +10,12 @@ defmodule PhxHtmlCookielessWeb.Router do
     plug :put_secure_browser_headers
   end
 
+
+  pipeline :browserstatic do
+    plug :accepts, ["html"]
+    plug :put_root_layout, {PhxHtmlCookielessWeb.LayoutView, :rootcookieless}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -18,6 +24,12 @@ defmodule PhxHtmlCookielessWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/cookieless", PhxHtmlCookielessWeb do
+    pipe_through :browserstatic
+
+    get "/", CookielessPageController, :index
   end
 
   # Other scopes may use custom stacks.
